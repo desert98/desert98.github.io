@@ -3,11 +3,36 @@ languageCode = 'zh-cn'
 title = 'My New Hugo Site'
 theme = 'PaperMod'
 
-# 启用持久化
+# 基本配置
 enableGitInfo = true
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
 
 # 输出设置
 publishDir = "public"
+
+[params]
+env = "production"
+defaultTheme = "auto"
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowRssButtonInSectionTermList = true
+ShowToc = true
+
+# 主页设置
+[params.homeInfoParams]
+Title = "欢迎来到我的博客 👋"
+Content = """
+这里是我的个人博客，记录学习和生活。
+"""
+
+[params.profileMode]
+enabled = false
 staticDir = "static"
 
 [outputs]
