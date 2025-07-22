@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>https://example.org/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- 0.148.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Jul 2025 19:48:14 +0800</lastBuildDate>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Howtomakeblog</title>
+      <link>https://example.org/posts/howtomakeblog/</link>
+      <pubDate>Tue, 22 Jul 2025 19:48:14 +0800</pubDate>
+      <guid>https://example.org/posts/howtomakeblog/</guid>
+      <description>&lt;p&gt;我也不知道
+&lt;strong&gt;听别人说的&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;还好吧&lt;/li&gt;
+&lt;li&gt;应该不难&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>My First Post</title>
+      <link>https://example.org/posts/my-first-post/</link>
+      <pubDate>Tue, 22 Jul 2025 18:46:25 +0800</pubDate>
+      <guid>https://example.org/posts/my-first-post/</guid>
+      <description>&lt;h3 id=&#34;hello-world&#34;&gt;Hello World？！&lt;/h3&gt;</description>
+    </item>
+  </channel>
+</rss>
