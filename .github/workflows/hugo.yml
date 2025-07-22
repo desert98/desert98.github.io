@@ -1,4 +1,4 @@
-name: Deploy Hugo site to Pages
+name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
@@ -22,24 +22,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 检出源码和主题子模块
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
-      
+
+      # 安装 Hugo
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
 
+      # 构建静态文件
       - name: Build with Hugo
-        run: |
-          hugo --minify
-          
+        run: hugo --minify
+
+      # 上传 public 目录作为 Pages artifact
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./public
 
@@ -52,4 +55,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
