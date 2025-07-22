@@ -1,60 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Posts on My New Hugo Site</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
-    <generator>Hugo -- 0.148.1</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Tue, 22 Jul 2025 20:36:23 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Howtograde</title>
-      <link>http://localhost:1313/posts/howtograde/</link>
-      <pubDate>Tue, 22 Jul 2025 20:36:23 +0800</pubDate>
-      <guid>http://localhost:1313/posts/howtograde/</guid>
-      <description>&lt;p&gt;一、修改博客主题
-Hugo 主题存放在 themes/ 目录，更换主题需替换主题文件 + 修改配置文件：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;选择新主题（以 PaperMod 为例）
-进入 Hugo 主题官网 挑选主题，复制主题的 Git 仓库地址。&lt;/li&gt;
-&lt;li&gt;安装新主题（通过 Git 子模块，推荐）
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on My New Hugo Site</title><link>https://desert98.github.io/posts/</link><description>Recent content in Posts on My New Hugo Site</description><generator>Hugo -- 0.148.1</generator><language>zh-cn</language><lastBuildDate>Tue, 22 Jul 2025 20:39:24 +0800</lastBuildDate><atom:link href="https://desert98.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Howtograde</title><link>https://desert98.github.io/posts/howtograde/</link><pubDate>Tue, 22 Jul 2025 20:36:23 +0800</pubDate><guid>https://desert98.github.io/posts/howtograde/</guid><description>&lt;p>一、修改博客主题
+Hugo 主题存放在 themes/ 目录，更换主题需替换主题文件 + 修改配置文件：&lt;/p>
+&lt;ol>
+&lt;li>选择新主题（以 PaperMod 为例）
+进入 Hugo 主题官网 挑选主题，复制主题的 Git 仓库地址。&lt;/li>
+&lt;li>安装新主题（通过 Git 子模块，推荐）
 在 Hugo 项目根目录执行：
-bash&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;添加主题为-git-子模块替换为目标主题的仓库地址&#34;&gt;添加主题为 Git 子模块（替换为目标主题的仓库地址）&lt;/h1&gt;
-&lt;p&gt;git submodule add &lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod.git&#34;&gt;https://github.com/adityatelange/hugo-PaperMod.git&lt;/a&gt; themes/PaperMod
+bash&lt;/li>
+&lt;/ol>
+&lt;h1 id="添加主题为-git-子模块替换为目标主题的仓库地址">添加主题为 Git 子模块（替换为目标主题的仓库地址）&lt;/h1>
+&lt;p>git submodule add &lt;a href="https://github.com/adityatelange/hugo-PaperMod.git">https://github.com/adityatelange/hugo-PaperMod.git&lt;/a> themes/PaperMod
 3. 修改 Hugo 配置文件（hugo.toml）
 打开 hugo.toml，修改 theme 字段为新主题名称（如 PaperMod）：
 toml
-theme = &amp;ldquo;PaperMod&amp;rdquo;  # 替换为你安装的主题名称
+theme = &amp;ldquo;PaperMod&amp;rdquo; # 替换为你安装的主题名称
 4. 生成并部署新主题
 bash
-hugo  # 生成新主题的静态文件
-git add .  # 暂存所有修改（含主题配置和子模块）
+hugo # 生成新主题的静态文件
+git add . # 暂存所有修改（含主题配置和子模块）
 git commit -m &amp;ldquo;更换主题为 PaperMod&amp;rdquo;
-git push origin main  # 推送到 GitHub，触发 Pages 重新部署
+git push origin main # 推送到 GitHub，触发 Pages 重新部署
 二、提交新文章
-Hugo 文章需放在 content/posts/ 目录（Markdown 格式），步骤如下：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Howtomakeblog</title>
-      <link>http://localhost:1313/posts/howtomakeblog/</link>
-      <pubDate>Tue, 22 Jul 2025 19:48:14 +0800</pubDate>
-      <guid>http://localhost:1313/posts/howtomakeblog/</guid>
-      <description>&lt;p&gt;我也不知道
-&lt;strong&gt;听别人说的&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;还好吧&lt;/li&gt;
-&lt;li&gt;应该不难&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Tue, 22 Jul 2025 18:46:25 +0800</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>&lt;h3 id=&#34;hello-world&#34;&gt;Hello World？！&lt;/h3&gt;</description>
-    </item>
-  </channel>
-</rss>
+Hugo 文章需放在 content/posts/ 目录（Markdown 格式），步骤如下：&lt;/p></description></item><item><title>Howtomakeblog</title><link>https://desert98.github.io/posts/howtomakeblog/</link><pubDate>Tue, 22 Jul 2025 19:48:14 +0800</pubDate><guid>https://desert98.github.io/posts/howtomakeblog/</guid><description>&lt;p>我也不知道
+&lt;strong>听别人说的&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>还好吧&lt;/li>
+&lt;li>应该不难&lt;/li>
+&lt;/ul></description></item><item><title>My First Post</title><link>https://desert98.github.io/posts/my-first-post/</link><pubDate>Tue, 22 Jul 2025 18:46:25 +0800</pubDate><guid>https://desert98.github.io/posts/my-first-post/</guid><description>&lt;h3 id="hello-world">Hello World？！&lt;/h3></description></item></channel></rss>
