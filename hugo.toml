@@ -9,16 +9,18 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
+publishDir = "public"
+staticDir = "static"
 
 # 输出设置
-publishDir = "public"
-
 [outputs]
 home = ["HTML", "RSS"]
 
+# 导航菜单
 [menu]
 main = []
 
+# 主题参数
 [params]
 env = "production"
 defaultTheme = "auto"
@@ -29,24 +31,15 @@ ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowRssButtonInSectionTermList = true
 ShowToc = true
-homeInfoParams = { Title = "欢迎来到我的博客 👋", Content = "这里是我的个人博客，记录学习和生活。" }
 
+# 首页信息
+[params.homeInfoParams]
+Title = "欢迎来到我的博客 👋"
+Content = "这里是我的个人博客，记录学习和生活。"
+
+# 永久链接设置
 [permalinks]
 posts = "/:year/:month/:title/"
-staticDir = "static"
-
-[outputs]
-home = ["HTML", "RSS"]
-
-[params]
-# 基本设置
-defaultTheme = "auto"
-ShowReadingTime = true
-ShowShareButtons = true
-ShowPostNavLinks = true
-ShowBreadCrumbs = true
-ShowCodeCopyButtons = true
-ShowRssButtonInSectionTermList = true
 
 # 禁用缓存
 [server]
