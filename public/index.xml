@@ -68,23 +68,27 @@ Hugo 主题存放在 themes/ 目录，更换主题需要按以下步骤操作：
 Hugo 文章采用 Markdown 格式，存放在 content/posts/ 目录下。以下是发布文章的完整流程：&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Howtomakeblog</title>
+      <title>如何建立个人博客</title>
       <link>https://desert98.github.io/posts/howtomakeblog/</link>
       <pubDate>Tue, 22 Jul 2025 19:48:14 +0800</pubDate>
       <guid>https://desert98.github.io/posts/howtomakeblog/</guid>
-      <description>&lt;p&gt;我也不知道
-&lt;strong&gt;听别人说的&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;还好吧&lt;/li&gt;
-&lt;li&gt;应该不难&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;建立个人博客的过程其实并不复杂，主要需要以下几个步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;选择博客框架&lt;/li&gt;
+&lt;li&gt;配置环境&lt;/li&gt;
+&lt;li&gt;编写内容&lt;/li&gt;
+&lt;li&gt;部署上线&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;本文将详细介绍如何使用 Hugo 框架搭建个人博客。&lt;/p&gt;</description>
     </item>
     <item>
       <title>My First Post</title>
       <link>https://desert98.github.io/posts/my-first-post/</link>
       <pubDate>Tue, 22 Jul 2025 18:46:25 +0800</pubDate>
       <guid>https://desert98.github.io/posts/my-first-post/</guid>
-      <description>&lt;h3 id=&#34;hello-world&#34;&gt;Hello World？！&lt;/h3&gt;</description>
+      <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello World！&lt;/h2&gt;
+&lt;p&gt;这是我的第一篇博客文章。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
