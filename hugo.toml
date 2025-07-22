@@ -3,8 +3,12 @@ languageCode = 'zh-cn'
 title = 'My New Hugo Site'
 theme = 'PaperMod'
 
-# 启用持久化
+# 基本配置
 enableGitInfo = true
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
 
 # 输出设置
 publishDir = "public"
