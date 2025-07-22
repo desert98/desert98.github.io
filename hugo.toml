@@ -23,6 +23,13 @@ ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowRssButtonInSectionTermList = true
 
+# 禁用缓存
+[server]
+[[server.headers]]
+for = "/**"
+[server.headers.values]
+Cache-Control = "no-store, no-cache, must-revalidate"
+
 # 首页设置
 [params.homeInfoParams]
 Title = "欢迎来到我的博客"
