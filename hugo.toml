@@ -121,8 +121,3 @@ weight = 20
 for = "/**"
 [server.headers.values]
 Cache-Control = "no-store, no-cache, must-revalidate"
-
-# 首页设置
-[params.homeInfoParams]
-Title = "欢迎来到我的博客"
-Content = "这里是我的个人博客，记录学习和生活。"
