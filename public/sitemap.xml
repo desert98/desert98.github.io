@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://desert98.github.io/categories/</loc>
+    <lastmod>2025-07-22T20:36:23+08:00</lastmod>
+  </url><url>
+    <loc>https://desert98.github.io/tags/hugo/</loc>
+    <lastmod>2025-07-22T20:36:23+08:00</lastmod>
+  </url><url>
     <loc>https://desert98.github.io/posts/howtograde/</loc>
     <lastmod>2025-07-22T20:36:23+08:00</lastmod>
   </url><url>
@@ -11,14 +17,22 @@
     <loc>https://desert98.github.io/posts/</loc>
     <lastmod>2025-07-22T20:36:23+08:00</lastmod>
   </url><url>
+    <loc>https://desert98.github.io/tags/</loc>
+    <lastmod>2025-07-22T20:36:23+08:00</lastmod>
+  </url><url>
+    <loc>https://desert98.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2025-07-22T20:36:23+08:00</lastmod>
+  </url><url>
+    <loc>https://desert98.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2025-07-22T20:36:23+08:00</lastmod>
+  </url><url>
+    <loc>https://desert98.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-07-22T20:36:23+08:00</lastmod>
+  </url><url>
     <loc>https://desert98.github.io/posts/howtomakeblog/</loc>
     <lastmod>2025-07-22T19:48:14+08:00</lastmod>
   </url><url>
     <loc>https://desert98.github.io/posts/my-first-post/</loc>
     <lastmod>2025-07-22T18:46:25+08:00</lastmod>
-  </url><url>
-    <loc>https://desert98.github.io/categories/</loc>
-  </url><url>
-    <loc>https://desert98.github.io/tags/</loc>
   </url>
 </urlset>

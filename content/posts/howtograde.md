@@ -1,8 +1,10 @@
-+++
-date = '2025-07-22T20:36:23+08:00'
-draft = false
-title = 'Hugo博客升级与文章发布指南'
-+++
+---
+title: "Hugo博客升级与文章发布指南"
+date: 2025-07-22T20:36:23+08:00
+draft: false
+tags: ["Hugo", "博客", "教程"]
+categories: ["技术笔记"]
+---
 一、修改博客主题
 Hugo 主题存放在 themes/ 目录，更换主题需要按以下步骤操作：
 
@@ -49,6 +51,8 @@ hugo --minify
 git add .
 git commit -m "更换主题为 PaperMod"
 git push origin main  # GitHub Actions 会自动部署
+```
+
 二、发布新文章
 Hugo 文章采用 Markdown 格式，存放在 content/posts/ 目录下。以下是发布文章的完整流程：
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>https://desert98.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>技术笔记 on My New Hugo Site</title>
+    <link>https://desert98.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 技术笔记 on My New Hugo Site</description>
     <image>
       <title>My New Hugo Site</title>
       <url>https://desert98.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
@@ -12,7 +12,7 @@
     <generator>Hugo -- 0.148.1</generator>
     <language>en</language>
     <lastBuildDate>Tue, 22 Jul 2025 20:36:23 +0800</lastBuildDate>
-    <atom:link href="https://desert98.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://desert98.github.io/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo博客升级与文章发布指南</title>
       <link>https://desert98.github.io/posts/howtograde/</link>
@@ -66,25 +66,6 @@ Hugo 主题存放在 themes/ 目录，更换主题需要按以下步骤操作：
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push origin main  &lt;span style=&#34;color:#75715e&#34;&gt;# GitHub Actions 会自动部署&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;二、发布新文章
 Hugo 文章采用 Markdown 格式，存放在 content/posts/ 目录下。以下是发布文章的完整流程：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Howtomakeblog</title>
-      <link>https://desert98.github.io/posts/howtomakeblog/</link>
-      <pubDate>Tue, 22 Jul 2025 19:48:14 +0800</pubDate>
-      <guid>https://desert98.github.io/posts/howtomakeblog/</guid>
-      <description>&lt;p&gt;我也不知道
-&lt;strong&gt;听别人说的&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;还好吧&lt;/li&gt;
-&lt;li&gt;应该不难&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>My First Post</title>
-      <link>https://desert98.github.io/posts/my-first-post/</link>
-      <pubDate>Tue, 22 Jul 2025 18:46:25 +0800</pubDate>
-      <guid>https://desert98.github.io/posts/my-first-post/</guid>
-      <description>&lt;h3 id=&#34;hello-world&#34;&gt;Hello World？！&lt;/h3&gt;</description>
     </item>
   </channel>
 </rss>
