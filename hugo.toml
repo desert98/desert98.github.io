@@ -1,45 +1,119 @@
-baseURL = 'https://desert98.github.io/'
-languageCode = 'zh-cn'
-title = 'My New Hugo Site'
-theme = 'PaperMod'
+baseURL = "https://desert98.github.io/"
+title = "My New Hugo Site"
+paginate = 5
+theme = "PaperMod"
 
-# 基本配置
-enableGitInfo = true
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
-publishDir = "public"
-staticDir = "static"
+enableEmoji = true
 
-# 输出设置
-[outputs]
-home = ["HTML", "RSS"]
+[minify]
+disableXML = true
+minifyOutput = true
 
-# 导航菜单
-[menu]
-main = []
-
-# 主题参数
 [params]
 env = "production"
+title = "ExampleSite"
+description = "ExampleSite description"
+keywords = [ "Blog", "Portfolio", "PaperMod" ]
+author = "Me"
+images = [ "<link or path of image for opengraph, twitter-cards>" ]
+DateFormat = "January 2, 2006"
 defaultTheme = "auto"
+disableThemeToggle = false
 ShowReadingTime = true
 ShowShareButtons = true
 ShowPostNavLinks = true
 ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
-ShowRssButtonInSectionTermList = true
-ShowToc = true
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = false
+hidemeta = false
+hideSummary = false
+showtoc = false
+tocopen = false
 
-# 首页信息
-[params.homeInfoParams]
-Title = "欢迎来到我的博客 👋"
-Content = "这里是我的个人博客，记录学习和生活。"
+  [params.assets]
+  favicon = "<link / abs url>"
+  favicon16x16 = "<link / abs url>"
+  favicon32x32 = "<link / abs url>"
+  apple_touch_icon = "<link / abs url>"
+  safari_pinned_tab = "<link / abs url>"
 
-# 永久链接设置
-[permalinks]
-posts = "/:year/:month/:title/"
+  [params.label]
+  text = "Home"
+  icon = "/apple-touch-icon.png"
+  iconHeight = 35
+
+  [params.profileMode]
+  enabled = false
+  title = "ExampleSite"
+  subtitle = "This is subtitle"
+  imageUrl = "<img location>"
+  imageWidth = 120
+  imageHeight = 120
+  imageTitle = "my image"
+
+    [[params.profileMode.buttons]]
+    name = "Posts"
+    url = "posts"
+
+    [[params.profileMode.buttons]]
+    name = "Tags"
+    url = "tags"
+
+  [params.homeInfoParams]
+  Title = "👋 欢迎来到我的博客"
+  Content = """
+  这里是我的个人博客，用来记录学习和生活。
+  """
+
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/desert98"
+
+[params.analytics.google]
+SiteVerificationTag = "XYZabc"
+
+[params.analytics.bing]
+SiteVerificationTag = "XYZabc"
+
+[params.analytics.yandex]
+SiteVerificationTag = "XYZabc"
+
+  [params.cover]
+  hidden = true
+  hiddenInList = true
+  hiddenInSingle = true
+
+  [params.editPost]
+  URL = "https://github.com/desert98/desert98.github.io/content"
+  Text = "Suggest Changes"
+  appendFilePath = true
+
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1_000
+threshold = 0.4
+minMatchCharLength = 0
+keys = [ "title", "permalink", "summary", "content" ]
+
+[[menu.main]]
+identifier = "archives"
+name = "归档"
+url = "/archives/"
+weight = 10
+
+[[menu.main]]
+identifier = "search"
+name = "搜索"
+url = "/search/"
+weight = 20
 
 # 禁用缓存
 [server]
