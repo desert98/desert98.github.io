@@ -13,6 +13,12 @@ buildExpired = false
 # 输出设置
 publishDir = "public"
 
+[outputs]
+home = ["HTML", "RSS"]
+
+[menu]
+main = []
+
 [params]
 env = "production"
 defaultTheme = "auto"
@@ -23,16 +29,10 @@ ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowRssButtonInSectionTermList = true
 ShowToc = true
+homeInfoParams = { Title = "欢迎来到我的博客 👋", Content = "这里是我的个人博客，记录学习和生活。" }
 
-# 主页设置
-[params.homeInfoParams]
-Title = "欢迎来到我的博客 👋"
-Content = """
-这里是我的个人博客，记录学习和生活。
-"""
-
-[params.profileMode]
-enabled = false
+[permalinks]
+posts = "/:year/:month/:title/"
 staticDir = "static"
 
 [outputs]
