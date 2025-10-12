@@ -130,6 +130,12 @@ name = "搜索"
 url = "/search/"
 weight = 20
 
+[[menu.main]]
+identifier = "resume"
+name = "简历"
+url = "/resume/"
+weight = 25
+
 # 禁用缓存
 [server]
 [[server.headers]]
