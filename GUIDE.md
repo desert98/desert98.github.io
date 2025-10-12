@@ -29,85 +29,262 @@ date = 2025-10-12T12:00:00+08:00
 draft = false
 tags = ["hugo","notes"]
 categories = ["技术学习"]
+# 全流程指南：写文章 / 删除文章、Git 操作、常见错误排查、项目文件说明
+
+下面这份文档覆盖你要的所有步骤，按操作场景拆分，包含可复制的 PowerShell 命令、常见报错定位方法与项目文件详解。
+
+----------
+
+目录（快速导航）
+- 新增文章：从空白到发布（本地 → 提交 → 部署）
+- 删除文章：完整流程
+- 完整 Git 工作流（命令、分支、冲突、撤销）
+- 常见错误定位与修复（本次修改中可能遇到的）
+- 项目文件与目录详解（每个重要文件说明）
+- 附：常用命令速查
+
+----------
+
+一、新增文章：从本地编辑到线上发布（全流程）
+
+步骤 1 — 新建文件（本地）
+
+1. 在 `content/posts/` 下创建新文件。例如：
+
+```powershell
+# 在 PowerShell 中
+New-Item -Path content\posts -Name "my-new-article.md" -ItemType File
+notepad content\posts\my-new-article.md
+```
+
+2. 编辑文件顶部 front matter（推荐使用 TOML 格式）：
+
+```toml
+++
+title = "我的新文章"
+date = 2025-10-12T10:00:00+08:00
+draft = true   # 本地调试发布前可设为 true
+tags = ["笔记","hugo"]
+categories = ["技术学习"]
 summary = "一句话摘要"
+aliases = ["/old-url/"]
 ++ 
+
+文章内容写在 front matter 下面。
 ```
 
-- 新建文章建议用编辑器模板或 `archetypes/default.md`。
+注意：
+- `draft = true` 会使文章只在 `hugo server -D` 下可见，发布前请把它设为 `false` 或移除。
+- 若需上传图片，放在 `static/images/`（例如 `static/images/my-post-img.png`），在 Markdown 中可直接使用 `/images/my-post-img.png`。
 
-## 3. 主题与模板定制（PaperMod）
+步骤 2 — 本地预览与校验
 
-- 覆盖主题模板：复制主题中的布局到 `layouts/`，Hugo 会优先使用站点层级的模板。
-	例如：
-
-```text
-cp themes/PaperMod/layouts/_default/single.html layouts/_default/single.html
+```powershell
+hugo server -D
+# 打开 http://localhost:1313/ 并检查文章展示、代码块、图片、TOC 等
 ```
 
-- 样式组织建议：
-	- 小改：文章内联 `<style>`（快速但不便维护）。
-	- 推荐：把样式放 `assets/css/*.css` 或 `assets/scss/*.scss` 并使用 Hugo Pipes 处理（`resources.Get`、`minify`、`fingerprint`）。
+常见本地预览检查点：
+- 是否显示文章（若 draft = true 则必须用 -D）
+- 是否有 Markdown 渲染错误（未闭合的代码块、缩进导致的代码块）
+- 页面是否有缺失资源（查看浏览器的 Network/Console）
 
-## 4. 搜索与索引（已配置）
+步骤 3 — 提交到 Git（建议使用 feature 分支）
 
-- 已启用 JSON 输出：`[outputs] home = ["HTML","JSON"]`，因此会生成 `public/index.json`，被 PaperMod 的搜索脚本读取。
-- 搜索参数在 `hugo.toml` 的 `[params.fuseOpts]` 中可配置（如 threshold、minMatchCharLength 等）。中文体验通常需要降低 threshold 并将 `minMatchCharLength=1`。
+推荐的 Git 流程（PowerShell）：
 
-## 5. 部署与 CI（GitHub Pages）
+```powershell
+# 创建并切换到 feature 分支
+git checkout -b feature/add-my-new-article
 
-- workflow 文件：`.github/workflows/hugo.yaml`。关键步骤：安装 Hugo、checkout、build、upload artifact、deploy.
-- 手动触发构建：
-	```powershell
-	git commit --allow-empty -m "rebuild site"
-	git push origin main
-	```
-
-## 6. 自动生成 Resume PDF（已在 workflow 中添加）
-
-- 我在 workflow 中添加了 `wkhtmltopdf` 的安装和生成步骤（在 Build 后）：
-	- 如果 `public/resume/index.html` 存在，workflow 会将其转换为 `public/_pdf/resume.pdf`，并随 `public/` 一并上传与部署。
-	- 该方法依赖 `wkhtmltopdf`，它直接将 HTML 转为 PDF，支持离线转换与常见 CSS 特性。
-
-## 7. 常见错误与修复步骤（排查指南）
-
-- 错误：生成的页面头部出现 `%3C...%3E` 或看起来像编码的占位符
-	- 原因：`hugo.toml` 中存在带尖括号的占位字符串（例如 `<link / abs url>`），这些被插入模板后会变成非法 URL。
-	- 解决：将这些占位值替换为空或有效 URL（已在本仓库修复）。
-
-- 错误：页面 HTML 被当作代码块显示（显示在 `<pre><code>`）
-	- 原因：Markdown 中的 HTML 缩进会被当作代码块，或者 `markup.goldmark.renderer.unsafe` 未启用。
-	- 解决：不要给 HTML 块添加前导空格，或在 `hugo.toml` 启用 `markup.goldmark.renderer.unsafe = true`（仓库已启用）。
-
-- 错误：站内搜索无结果或结果不相关
-	- 检查 `public/index.json` 是否包含文章；查看 `public/assets/js/search.*.js` 中 Fuse 配置是否匹配 `hugo.toml`。
-	- 调整 `threshold`，或为中文做分词预处理（复杂但可明显提高中文搜索质量）。
-
-- 错误：GitHub Pages 部署失败
-	- 在仓库 Actions 页查看最新 workflow 的日志，重点看 Build with Hugo 步骤的 stderr/stdout。
-	- 常见问题：Hugo 版本不匹配、theme 子模块未拉取、assets 管线工具（如 Dart Sass）未安装。
-
-## 8. 模板示例
-
-- 简历专用 layout（`layouts/resume/single.html`）示例（仓库已包含）：
-
-```html
-{{ "{{ define \"main\" }}" }}
-	{{ "{{ partial \"breadcrumbs.html\" . }}" }}
-	<h1 class="post-title">{{ "{{ .Title }}" }}</h1>
-	<div class="post-description">{{ "{{ .Description }}" }}</div>
-	{{ "{{ $styles := resources.Get \"css/resume.css\" | minify | fingerprint }}" }}
-	<link rel="stylesheet" href="{{ "{{ $styles.Permalink }}" }}" integrity="{{ "{{ $styles.Data.Integrity }}" }}">
-	<main class="post-content resume-page">
-		{{ "{{ .Content }}" }}
-	</main>
-{{ "{{ end }}" }}
+git add content/posts/my-new-article.md
+git commit -m "feat(post): add my-new-article"
+git push -u origin feature/add-my-new-article
 ```
 
-## 9. 迁移内联样式到 `assets/`（已完成）
+步骤 4 — 远程合并与部署
 
-- 我已把 `content/resume/_index.md` 中的内联 CSS 提取到 `assets/css/resume.css`，并更新 `content/resume/_index.md` 的 `layout` 为 `resume`，以及新增 `layouts/resume/single.html` 来引入样式。这会使样式更易维护，并在 Actions 中使用 fingerprint 缓存。
+- 通过 GitHub 上创建 Pull Request（PR），在 PR 中说明文章分类、摘要、是否需要 review。
+- 合并到 `main` 分支后，GitHub Actions 会触发构建并部署到 Pages（workflow 文件：`.github/workflows/hugo.yaml`）。
+- 等待 Actions 成功后访问线上页面（如 https://desert98.github.io/posts/... 或直接站点根）确认发布。若部署失败，查看 Actions 的日志（下文有定位方法）。
 
-## 10. 常用命令速查
+二、删除文章（全流程）
+
+步骤 1 — 在本地删除文件并测试
+
+```powershell
+git checkout main
+git pull origin main
+git checkout -b chore/remove-old-article
+
+git rm content/posts/old-article.md
+git commit -m "chore(post): remove old-article"
+git push -u origin chore/remove-old-article
+```
+
+步骤 2 — 通过 PR 合并并部署
+
+- 在 GitHub 上发起 PR 并合并。合并后 Actions 会重新构建站点并移除已删除文章的页面。
+- 若你不想留下历史记录，可以在本地直接用 `git rm` 并 push 到 main（仅在你理解 git 历史的情况下使用）。
+
+注意：删除文章会导致原有的外部链接（若有）返回 404。若需要保留旧 URL，可在 `content/_index.md` 或 `static/` 下添加重定向页面，或使用 `aliases` 在新文章里指向旧 URL（但删除后 aliases 无效）。
+
+三、完整 Git 操作与最佳实践
+
+基础命令（PowerShell）
+
+```powershell
+# 克隆仓库
+git clone https://github.com/desert98/desert98.github.io.git
+
+# 查看状态
+git status -sb
+
+# 创建分支
+git checkout -b feature/short-desc
+
+# 添加并提交
+git add <files>
+git commit -m "feat: 描述"
+
+# 推送分支
+git push -u origin <branch>
+
+# 将远程改动合并到本地
+git pull --rebase origin main
+
+# 查看日志
+git log --oneline -n 20
+```
+
+分支模型建议
+- 使用 feature 分支（`feature/...`）、修复分支（`fix/...`）、chore 分支（`chore/...`）。
+- 在合并到 `main` 之前通过 PR 做 code review 与 CI 校验。
+
+处理冲突
+
+1. 当 `git pull` 报冲突时，Git 会提示具体文件。打开文件并按冲突标记（<<<<<<< ======= >>>>>>>）手动合并。
+2. 合并完成后：
+
+```powershell
+git add <resolved-files>
+git commit --no-edit
+git push origin <branch>
+```
+
+撤销/回退策略
+- 撤销未提交更改（重置工作区）：
+
+```powershell
+git restore <file>
+git restore --staged <file>  # 从暂存区移除
+```
+
+- 放弃本地提交并回到远端（危险，慎用）
+
+```powershell
+git reset --hard origin/main
+```
+
+- 使用 `git revert` 撤销已发布的提交（更安全，会生成一个反向提交）：
+
+```powershell
+git revert <commit-hash>
+git push origin main
+```
+
+临时保存工作（stash）
+
+```powershell
+git stash push -m "WIP: 调整 resume"  # 保存
+git stash pop  # 恢复
+```
+
+Cherry-pick（挑选提交到另一个分支）
+
+```powershell
+git checkout main
+git cherry-pick <commit-hash>
+```
+
+四、此次修改中常见报错与定位方法（详尽）
+
+1) Hugo 构建失败（`hugo` 报错）
+- 典型错误信息与含义：
+  - "ERROR: failed to render pages": 模板或 shortcode 报错，通常是模板语法问题或数据缺失。
+  - "found no layout file for \"json\" for layout \"archives\" for kind \"section\"": 表示你启用了 JSON 输出（outputs: section = ["HTML","JSON"]），但没有对应的 JSON layout。若 JSON layout 不是必须，可忽略或添加 `layouts/_default/list.json`。
+
+定位方法：
+```powershell
+hugo --minify 2>&1 | Select-String -Pattern "ERROR|WARN"
+```
+检查日志中的文件路径、模板名称，然后定位 `layouts/` 中的模板。
+
+修复建议：
+- 如果是模板语法错误，打开提示的模板文件修复 Go template 表达式。
+- 如果是缺少 JSON 模板，添加一个 `layouts/_default/list.json` 或在 `hugo.toml` 中移除对应的 JSON 输出配置。
+
+2) 站点页面 404（线上）
+- 可能原因：
+  - GitHub Pages 部署尚未完成或失败（检查 Actions）。
+  - 文章是 draft（未在生产构建中包含）。
+  - baseURL 配置错误导致资源路径错位。
+
+定位方法：
+- 在 GitHub 仓库 > Actions 中查看最新 workflow 的构建日志；检查 "Build with Hugo" 步骤是否成功并查看上传 artifact 的输出。
+- 本地用 `hugo --minify` 生成 `public/`，并查看 `public/<path>/index.html` 是否存在。
+
+3) 资源加载异常（CSS/JS 没生效或返回 HTML）
+- 常见原因：
+  - `hugo.toml` 中存在占位字符串（例如 `<link / abs url>`），导致模板生成非法 URL（被编码为 `%3C...%3E`）。
+  - assets 未正确构建（如果使用 Hugo Pipes/SCSS 但 Actions 没安装 Dart Sass）。
+
+定位方法：在浏览器 DevTools 的 Network 标签中查看具体请求与响应类型（是否 200，Content-Type 是否正确）。
+
+修复建议：
+- 清理占位值（或把占位改为空）；确保 workflow 安装了必要工具（Dart Sass、Node 等）。
+
+4) Search 无结果或中文匹配差
+- 检查 `public/index.json` 是否存在并包含文章项（title/permalink/content/summary）。
+- 检查 `public/assets/js/search.*.js` 是否成功加载且 Fuse 参数与你在 `hugo.toml` 中设置一致。
+
+5) PDF 生成失败（CI）
+- 常见问题：wkhtmltopdf 在 runner 上未安装或缺少库 / Chinese fonts 未安装，导致 PDF 无法正常渲染中文。
+
+定位方法：在 Actions 的 build 日志中找到 wkhtmltopdf 安装与执行步骤的输出，贴出 stderr 内容以便诊断。
+
+修复建议：
+- 安装系统字库（例如 `fonts-noto-cjk`）或改用 Puppeteer（Chrome）在 Node 环境中生成 PDF，更兼容现代 CSS。
+
+五、项目中文件与目录说明（逐项）
+
+根目录简介（按你仓库当前结构）：
+
+- `hugo.toml`：站点配置文件（主题、params、taxonomies、outputs、markup 配置等）。这是最重要的配置。
+- `archetypes/`：文章模板，`default.md` 在你执行 `hugo new` 时作为默认 front matter 模板。
+- `assets/`：存放可通过 Hugo Pipes 处理的资源（CSS/SCSS/JS），例如我们新增的 `assets/css/resume.css`。
+- `content/`：网站内容（文章、页面）。关键子目录：
+  - `content/posts/`：博客文章
+  - `content/resume/_index.md`：简历页面的内容（现在使用 `layout = "resume"`）
+  - `content/archives/`、`content/search/`、`content/categories/`：自定义页面或 section
+- `data/`：存放可被模板读取的结构化数据（YAML/JSON/TOML），本项目未大量使用但可扩展。
+- `i18n/`：国际化字符串，PaperMod 提供多个语言文件。
+- `layouts/`：站点层级的模板（优先级高于主题），我们新增了 `layouts/resume/single.html`。
+- `public/`：Hugo 生成的静态站点输出，通常不纳入版本控制（我们已将其移除并添加到 `.gitignore`）。
+- `resources/`：Hugo 生成的中间资源（如指纹化后的 CSS），通常也不纳入版本控制。
+- `static/`：静态资源直接拷贝到网站根（无需编译），如 favicon、robots.txt，访问路径为 `/<file>`。
+- `themes/`：第三方主题（PaperMod）代码，包含其 own layouts、assets、i18n 等；可通过复制模板到 `layouts/` 来覆盖。
+- `.github/workflows/hugo.yaml`：CI 配置，负责在 push 时构建并部署到 GitHub Pages；我们在此加入了 PDF 生成步骤。
+- `GUIDE.md`：本文件，站点使用与维护手册。
+- `.gitignore`：忽略文件配置（我们已添加 `public/`、`resources/` 等）。
+
+Public 目录常见文件（构建产物）说明：
+- `public/index.html`：站点首页
+- `public/index.json`：搜索索引（供 Fuse.js 使用）
+- `public/posts/...`：每篇文章的静态页面
+- `public/_pdf/resume.pdf`：CI 生成的简历 PDF（若 CI 成功）
+
+六、附：常用命令速查（PowerShell 风格）
 
 ```powershell
 # 本地预览
@@ -116,19 +293,17 @@ hugo server -D
 # 生产构建
 hugo --minify
 
+# Git 基础流程
+git checkout -b feature/xxx
+git add .
+git commit -m "feat: ..."
+git push -u origin feature/xxx
+
 # 触发远端构建
 git commit --allow-empty -m "rebuild"; git push origin main
 
-# 新建文章
-New-Item -Path content/posts -Name "my-post.md" -ItemType File
+# 查看 Actions 日志（需要在 GitHub 网页界面操作）
 ```
 
----
+----------
 
-如果你需要，我可以：
-
-- 把 `resume.pdf` 同步到站点根的某个可下载位置并在 `resume` 页面加上下载按钮；
-- 改用 Puppeteer/Chrome 生成 PDF（更好的 CSS 支持）；
-- 为搜索加入中文分词（需要额外预处理步骤）。
-
-如果你要我继续执行其中某些任务（比如把 PDF 链接到页面或用 Puppeteer 替代 wkhtmltopdf），告诉我我会继续。 
