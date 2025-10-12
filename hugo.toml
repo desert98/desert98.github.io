@@ -26,7 +26,7 @@ title = "ExampleSite"
 description = "ExampleSite description"
 keywords = [ "Blog", "Portfolio", "PaperMod" ]
 author = "Me"
-images = [ "<link or path of image for opengraph, twitter-cards>" ]
+images = [ "" ]
 DateFormat = "January 2, 2006"
 defaultTheme = "auto"
 disableThemeToggle = false
@@ -44,11 +44,11 @@ showtoc = false
 tocopen = false
 
   [params.assets]
-  favicon = "<link / abs url>"
-  favicon16x16 = "<link / abs url>"
-  favicon32x32 = "<link / abs url>"
-  apple_touch_icon = "<link / abs url>"
-  safari_pinned_tab = "<link / abs url>"
+  favicon = ""
+  favicon16x16 = ""
+  favicon32x32 = ""
+  apple_touch_icon = ""
+  safari_pinned_tab = ""
 
   [params.label]
   text = "Home"
@@ -59,7 +59,7 @@ tocopen = false
   enabled = false
   title = "ExampleSite"
   subtitle = "This is subtitle"
-  imageUrl = "<img location>"
+  imageUrl = ""
   imageWidth = 120
   imageHeight = 120
   imageTitle = "my image"
