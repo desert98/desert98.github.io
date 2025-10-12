@@ -7,31 +7,65 @@ description: "专业版个人简历，结构清晰、响应式，适配博客展
 ---
 
 <style>
-/* 简历内联样式：响应式，两栏布局（桌面）-> 单列（移动）*/
-.resume-wrap{max-width:1100px;margin:0 auto;padding:28px 18px;font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans CJK SC',sans-serif;color:var(--text-color,#111);} 
-.resume-top{display:flex;flex-wrap:wrap;align-items:center;gap:16px;border-bottom:1px solid rgba(0,0,0,0.06);padding-bottom:18px;margin-bottom:18px}
-.avatar{width:96px;height:96px;border-radius:12px;background:#f2f4f7;display:flex;align-items:center;justify-content:center;font-weight:700;color:#333}
-.name{font-size:26px;font-weight:700}
-.meta{color:var(--muted,#666);font-size:14px}
-.intro{margin-top:8px;font-size:15px;line-height:1.6}
-.resume-grid{display:grid;grid-template-columns:320px 1fr;gap:28px;margin-top:18px}
+/* Resume: improved layout, hierarchy, spacing, and responsiveness */
+.resume-wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:34px 20px;
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans CJK SC',sans-serif;
+  color:var(--text-color,#111);
+  -webkit-font-smoothing:antialiased;
+}
+.resume-top{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:18px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  padding-bottom:20px;
+  margin-bottom:20px;
+}
+.avatar{
+  width:96px;height:96px;border-radius:12px;background:#f2f4f7;display:flex;align-items:center;justify-content:center;font-weight:700;color:#333;font-size:20px
+}
+.name{font-size:28px;font-weight:800;letter-spacing:0.2px}
+.meta{color:var(--muted,#666);font-size:14px;line-height:1.5}
+.intro{margin-top:8px;font-size:15px;line-height:1.75;color:rgba(0,0,0,0.8)}
+
+/* Grid: slightly wider left column for visual balance */
+.resume-grid{display:grid;grid-template-columns:360px 1fr;gap:32px;margin-top:22px;align-items:start}
 .card{background:transparent}
-.side-block{padding:12px;border-radius:8px;background:var(--card-bg,transparent)}
-.section-title{font-weight:700;margin-bottom:8px;color:var(--accent,#1f6feb)}
+.side-block{padding:14px;border-radius:10px;background:var(--card-bg,transparent)}
+
+/* Section title: unified style */
+.section-title{font-weight:700;margin-bottom:10px;color:var(--accent,#1f6feb);font-size:16px}
+
+/* Body text and lists */
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px}
 .tag{background:rgba(31,111,235,0.08);color:var(--accent,#1f6feb);padding:6px 10px;border-radius:999px;font-size:13px}
-.experience{margin-bottom:18px}
+.experience{margin-bottom:22px}
 .exp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.exp-role{font-weight:700}
+.exp-role{font-weight:700;font-size:15px}
 .exp-meta{color:var(--muted,#666);font-size:13px}
-.bullet{margin:8px 0 0 0;padding-left:18px}
+.bullet{margin:10px 0 0 0;padding-left:20px;line-height:1.7}
 .metrics{color:var(--accent,#1f6feb);font-weight:700}
 
-/* 响应式 */
-@media (max-width:900px){
-  .resume-grid{grid-template-columns:1fr}
+/* Spacing between sections to improve reading flow */
+section.card{margin-bottom:24px;padding:10px 0}
+
+/* Responsive adjustments */
+@media (max-width:1000px){
+  .resume-grid{grid-template-columns:1fr;gap:18px}
+  .resume-wrap{padding:26px 16px}
   .avatar{width:72px;height:72px}
   .name{font-size:22px}
+  .section-title{font-size:15px}
+}
+
+/* Small tweaks for very small screens */
+@media (max-width:480px){
+  .resume-wrap{padding:18px 12px}
+  .bullet{padding-left:16px}
 }
 </style>
 
