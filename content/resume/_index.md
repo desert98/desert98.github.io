@@ -2,7 +2,7 @@
 title: "简历"
 date: 2025-10-12T15:30:00+08:00
 draft: false
-layout: "page"
+layout: "resume"
 description: "专业版个人简历，结构清晰、响应式，适配博客展示场景，便于面试官快速阅读。"
 ---
 
@@ -67,8 +67,6 @@ section.card{margin-bottom:24px;padding:10px 0}
   .resume-wrap{padding:18px 12px}
   .bullet{padding-left:16px}
 }
-</style>
-
 <div class="resume-wrap">
 <div class="resume-top">
 <div class="avatar">DN</div>

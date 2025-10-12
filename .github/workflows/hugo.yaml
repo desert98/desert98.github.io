@@ -76,6 +76,19 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+      - name: Install wkhtmltopdf
+        run: |
+          sudo apt-get update && sudo apt-get install -y wkhtmltopdf
+
+      - name: Generate resume PDF
+        run: |
+          if [ -f public/resume/index.html ]; then
+            mkdir -p public/_pdf
+            wkhtmltopdf --enable-local-file-access public/resume/index.html public/_pdf/resume.pdf || true
+            echo "Generated public/_pdf/resume.pdf"
+          else
+            echo "No resume page found to generate PDF"
+          fi
       - name: Cache Save
         id: cache-save
         uses: actions/cache/save@v4
