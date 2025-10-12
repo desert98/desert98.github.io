@@ -2,64 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>My New Hugo Site</title>
-    <link>https://desert98.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on My New Hugo Site</description>
     <image>
       <title>My New Hugo Site</title>
-      <url>https://desert98.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://desert98.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.148.1</generator>
     <language>en</language>
     <lastBuildDate>Mon, 28 Jul 2025 10:52:56 +0800</lastBuildDate>
-    <atom:link href="https://desert98.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>君不见</title>
-      <link>https://desert98.github.io/posts/%E5%90%9B%E4%B8%8D%E8%A7%81/</link>
+      <link>http://localhost:1313/posts/%E5%90%9B%E4%B8%8D%E8%A7%81/</link>
       <pubDate>Mon, 28 Jul 2025 10:52:56 +0800</pubDate>
-      <guid>https://desert98.github.io/posts/%E5%90%9B%E4%B8%8D%E8%A7%81/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
+      <guid>http://localhost:1313/posts/%E5%90%9B%E4%B8%8D%E8%A7%81/</guid>
+      <description>&lt;div align=&#34;center&#34;&gt;
 &lt;h1 id=&#34;君不见&#34;&gt;君不见&lt;/h1&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;br/&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;江山代有才人出，各领风骚数百年&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;br/&gt;
+&lt;/div&gt;
 &lt;hr&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;div style=&#34;text-align: center; padding: 20px 0;&#34;&gt;
 &lt;h3 id=&#34;其一&#34;&gt;其一&lt;/h3&gt;
 &lt;p&gt;君不见黄河天来雪海连，&lt;br&gt;
 奔涛卷沙黄入天。&lt;br&gt;
 高堂明镜照华发，&lt;br&gt;
 朝如青云暮似烟。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;br/&gt;
 &lt;h3 id=&#34;其二&#34;&gt;其二&lt;/h3&gt;
 &lt;p&gt;君不见青海古戍骨相撑，&lt;br&gt;
 寒风卷地哭残兵。&lt;br&gt;
 沙场血染征袍裂，&lt;br&gt;
 谁忆李将军旧名？&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;br/&gt;
 &lt;h3 id=&#34;其三&#34;&gt;其三&lt;/h3&gt;
 &lt;p&gt;君不见北海英风逐流波，&lt;br&gt;
 裴尚书坟棘高嵯峨。&lt;br&gt;
 当年冠盖满京华，&lt;br&gt;
 转瞬荒丘没薜萝。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;br/&gt;
 &lt;h3 id=&#34;其四&#34;&gt;其四&lt;/h3&gt;
 &lt;p&gt;走马川前雪暗天，&lt;br&gt;
 黄河东去不复还。&lt;br&gt;
 青丝落尽英雄老，&lt;br&gt;
 白骨堆边日又偏。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;br/&gt;
 &lt;h3 id=&#34;结章&#34;&gt;结章&lt;/h3&gt;
 &lt;p&gt;万古兴亡空搔首，&lt;br&gt;
-一杯浊酒对苍烟。&lt;/p&gt;</description>
+一杯浊酒对苍烟。&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;div style=&#34;text-align: right; padding: 20px; font-style: italic;&#34;&gt;
+写于壬寅年夏
+&lt;/div&gt;</description>
     </item>
     <item>
       <title>Hugo博客升级与文章发布指南</title>
-      <link>https://desert98.github.io/posts/howtograde/</link>
+      <link>http://localhost:1313/posts/howtograde/</link>
       <pubDate>Tue, 22 Jul 2025 20:36:23 +0800</pubDate>
-      <guid>https://desert98.github.io/posts/howtograde/</guid>
+      <guid>http://localhost:1313/posts/howtograde/</guid>
       <description>&lt;p&gt;一、修改博客主题
 Hugo 主题存放在 themes/ 目录，更换主题需要按以下步骤操作：&lt;/p&gt;
 &lt;ol&gt;
@@ -111,9 +116,9 @@ Hugo 文章采用 Markdown 格式，存放在 content/posts/ 目录下。以下�
     </item>
     <item>
       <title>如何建立个人博客</title>
-      <link>https://desert98.github.io/posts/howtomakeblog/</link>
+      <link>http://localhost:1313/posts/howtomakeblog/</link>
       <pubDate>Tue, 22 Jul 2025 19:48:14 +0800</pubDate>
-      <guid>https://desert98.github.io/posts/howtomakeblog/</guid>
+      <guid>http://localhost:1313/posts/howtomakeblog/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;建立个人博客的过程其实并不复杂，主要需要以下几个步骤：&lt;/p&gt;
 &lt;ol&gt;
@@ -125,11 +130,16 @@ Hugo 文章采用 Markdown 格式，存放在 content/posts/ 目录下。以下�
 &lt;p&gt;本文将详细介绍如何使用 Hugo 框架搭建个人博客。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>My First Post</title>
-      <link>https://desert98.github.io/posts/my-first-post/</link>
-      <pubDate>Tue, 22 Jul 2025 18:46:25 +0800</pubDate>
-      <guid>https://desert98.github.io/posts/my-first-post/</guid>
-      <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello World！&lt;/h2&gt;
+      <title></title>
+      <link>http://localhost:1313/posts/my-first-post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <description>&lt;p&gt;title: &amp;ldquo;My First Post&amp;rdquo;
+date: 2025-07-22T18:46:25+08:00
+draft: false
+tags: [&amp;ldquo;博客&amp;rdquo;]
+categories: [&amp;ldquo;生活随笔&amp;rdquo;]&lt;/p&gt;
+&lt;h2 id=&#34;hello-world&#34;&gt;Hello World！&lt;/h2&gt;
 &lt;p&gt;这是我的第一篇博客文章。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -122,6 +122,21 @@ name = "搜索"
 url = "/search/"
 weight = 20
 
+[[menu.main]]
+identifier = "感悟"
+name = "感悟"
+url = "/categories/感悟/"
+weight = 30
+
+[[menu.main]]
+identifier = "技术学习"
+name = "技术学习"
+url = "/categories/技术学习/"
+weight = 40
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
 # 禁用缓存
 [server]
 [[server.headers]]

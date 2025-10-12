@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>博客 on My New Hugo Site</title>
-    <link>https://desert98.github.io/tags/%E5%8D%9A%E5%AE%A2/</link>
+    <link>http://localhost:1313/tags/%E5%8D%9A%E5%AE%A2/</link>
     <description>Recent content in 博客 on My New Hugo Site</description>
     <image>
       <title>My New Hugo Site</title>
-      <url>https://desert98.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://desert98.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.148.1</generator>
     <language>en</language>
     <lastBuildDate>Tue, 22 Jul 2025 20:36:23 +0800</lastBuildDate>
-    <atom:link href="https://desert98.github.io/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo博客升级与文章发布指南</title>
-      <link>https://desert98.github.io/posts/howtograde/</link>
+      <link>http://localhost:1313/posts/howtograde/</link>
       <pubDate>Tue, 22 Jul 2025 20:36:23 +0800</pubDate>
-      <guid>https://desert98.github.io/posts/howtograde/</guid>
+      <guid>http://localhost:1313/posts/howtograde/</guid>
       <description>&lt;p&gt;一、修改博客主题
 Hugo 主题存放在 themes/ 目录，更换主题需要按以下步骤操作：&lt;/p&gt;
 &lt;ol&gt;
@@ -69,9 +69,9 @@ Hugo 文章采用 Markdown 格式，存放在 content/posts/ 目录下。以下�
     </item>
     <item>
       <title>如何建立个人博客</title>
-      <link>https://desert98.github.io/posts/howtomakeblog/</link>
+      <link>http://localhost:1313/posts/howtomakeblog/</link>
       <pubDate>Tue, 22 Jul 2025 19:48:14 +0800</pubDate>
-      <guid>https://desert98.github.io/posts/howtomakeblog/</guid>
+      <guid>http://localhost:1313/posts/howtomakeblog/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;建立个人博客的过程其实并不复杂，主要需要以下几个步骤：&lt;/p&gt;
 &lt;ol&gt;
@@ -81,14 +81,6 @@ Hugo 文章采用 Markdown 格式，存放在 content/posts/ 目录下。以下�
 &lt;li&gt;部署上线&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;本文将详细介绍如何使用 Hugo 框架搭建个人博客。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>My First Post</title>
-      <link>https://desert98.github.io/posts/my-first-post/</link>
-      <pubDate>Tue, 22 Jul 2025 18:46:25 +0800</pubDate>
-      <guid>https://desert98.github.io/posts/my-first-post/</guid>
-      <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello World！&lt;/h2&gt;
-&lt;p&gt;这是我的第一篇博客文章。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
