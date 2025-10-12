@@ -44,3 +44,9 @@ section.card{margin-bottom:24px;padding:10px 0}
   .resume-wrap{padding:18px 12px}
   .bullet{padding-left:16px}
 }
+
+/* Download button */
+.resume-actions{display:flex;gap:12px;align-items:center;margin-top:12px}
+.resume-download{display:inline-block;padding:8px 14px;background:var(--accent,#1f6feb);color:#fff;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px}
+.resume-download:hover{opacity:0.95}
+
